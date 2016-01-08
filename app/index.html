@@ -114,7 +114,7 @@ limitations under the License.
 
 </body>
 <script>
-  var ROOT = '//commondatastorage.googleapis.com/gtv-videos-bucket/sample/';
+  var ROOT = '//d3aaadtebrsnqo.cloudfront.net/';
   var mediaArray;
   var castManager;
   var carousel;
@@ -181,7 +181,7 @@ limitations under the License.
    * Make the XHR request.
    */
   function makeCorsRequest() {
-    var url = ROOT + 'd.json';
+    var url = ROOT + 'd3.json';
     var xhr = createCORSRequest('GET', url);
     if (!xhr) {
       console.log('CORS not supported');
@@ -190,6 +190,8 @@ limitations under the License.
     // Response handlers.
     xhr.onload = function () {
       var content = JSON.parse(xhr.responseText);
+			  console.log('Foobar.');
+			  console.log(content);
       processMediaList(content);
       asyncComplete();
     };
